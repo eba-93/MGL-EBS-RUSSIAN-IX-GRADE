@@ -7,42 +7,45 @@
    бараан горим нь Хохлома лак (хар, улаан, алт). Хаалтын хээ нь орос сүмийн бөмбөгөр, зураг нь матрёшка.
    Өргөлттэй эгшиг улаан өнгөөр тодорно. Бүх бичиг сурагчдад ээлтэй, дугуй хэлбэртэй Nunito. */
 :root{
-  --bg:#F4F6FC;
+  --bg:#ECEEF5;
   --surface:#FFFFFF;
-  --ink:#14224D;
-  --muted:#4F5B82;
-  --line:#C9D4EE;
-  --accent:#1F4FBF;
+  --ink:#2B2A4C;
+  --muted:#7A7C99;
+  --line:#E3E4F0;
+  --accent:#7B52E8;
   --accent-ink:#FFFFFF;
-  --soft:#E0E8FA;
-  --stress:#C8281E;
-  --orn:#1F4FBF;
-  --hero-bg:#1F4FBF;
+  --soft:#EFEAFD;
+  --stress:#F58A1F;
+  --orn:#B9A3F5;
+  --hero-bg:#7B6AE6;
   --hero-ink:#FFFFFF;
+  --grad:linear-gradient(135deg,#A672F6 0%,#6D4BE0 100%);
+  --shadow:0 8px 24px rgba(110,90,200,.14);
+  --orange:#F58A1F;
   --good:#1B7F53;
   --good-bg:#DFF3E8;
   --bad:#B83232;
   --bad-bg:#FBE4E4;
-  --m-scarf:#C8281E;--m-body:#1F4FBF;--m-apron:#FFFFFF;--m-face:#F7DCC0;
+  --m-scarf:#F58A1F;--m-body:#7B52E8;--m-apron:#FFFFFF;--m-face:#F7DCC0;
   --display:"Nunito",system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --body:var(--display);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#150F0C;--surface:#211713;--ink:#F5E8D0;--muted:#C4AE90;--line:#4B3125;
-    --accent:#E4AB2D;--accent-ink:#1B1009;--soft:#33201A;--stress:#FF7A60;--orn:#E4AB2D;
-    --hero-bg:#A82218;--hero-ink:#FCF0D8;
+    --bg:#15122A;--surface:#201C3D;--ink:#EEEBFF;--muted:#A9A5D0;--line:#35305F;
+    --accent:#B195FF;--accent-ink:#1A1433;--soft:#2C2653;--stress:#FFA94D;--orn:#8A6CF0;
+    --hero-bg:#6A4BDB;--hero-ink:#FFFFFF;--shadow:0 8px 24px rgba(0,0,0,.35);--orange:#FFA94D;
     --good:#62D19A;--good-bg:#173628;--bad:#FF8A8A;--bad-bg:#3C1F22;
-    --m-scarf:#E4AB2D;--m-body:#B02A1E;--m-apron:#F5E8D0;--m-face:#F3D4B0;
+    --m-scarf:#FFA94D;--m-body:#8A6CF0;--m-apron:#EEEBFF;--m-face:#F3D4B0;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#150F0C;--surface:#211713;--ink:#F5E8D0;--muted:#C4AE90;--line:#4B3125;
-    --accent:#E4AB2D;--accent-ink:#1B1009;--soft:#33201A;--stress:#FF7A60;--orn:#E4AB2D;
-    --hero-bg:#A82218;--hero-ink:#FCF0D8;
+  --bg:#15122A;--surface:#201C3D;--ink:#EEEBFF;--muted:#A9A5D0;--line:#35305F;
+    --accent:#B195FF;--accent-ink:#1A1433;--soft:#2C2653;--stress:#FFA94D;--orn:#8A6CF0;
+    --hero-bg:#6A4BDB;--hero-ink:#FFFFFF;--shadow:0 8px 24px rgba(0,0,0,.35);--orange:#FFA94D;
     --good:#62D19A;--good-bg:#173628;--bad:#FF8A8A;--bad-bg:#3C1F22;
-    --m-scarf:#E4AB2D;--m-body:#B02A1E;--m-apron:#F5E8D0;--m-face:#F3D4B0;
+    --m-scarf:#FFA94D;--m-body:#8A6CF0;--m-apron:#EEEBFF;--m-face:#F3D4B0;
     color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -211,6 +214,106 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
 .gsub{display:flex;flex-direction:column;gap:14px;padding-top:16px;margin-top:4px;border-top:1px dashed var(--line)}
 .gsub h4{margin:0;font-size:1.1rem;font-weight:800}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== HelloBaby стиль ===== */
+.back,.chip{border:0;background:var(--surface);box-shadow:var(--shadow);border-radius:999px}
+.tile,.qcard,.list,.proverb,.gcard,.tbl{border:0;box-shadow:var(--shadow);border-radius:24px}
+.tile:hover{transform:translateY(-3px)}
+.tile.hero{background:var(--grad);box-shadow:0 12px 28px rgba(109,75,224,.38);padding:26px 22px;border-radius:28px;position:relative;overflow:hidden}
+.tile.hero::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.12)}
+.tile.hero::before{content:"";position:absolute;right:40px;bottom:-40px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.08)}
+.tile.hero .st{text-decoration-color:var(--orange)}
+h1{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{color:var(--orange)}
+.btn{border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--accent);font-weight:700;padding:10px 20px}
+.btn.primary{background:var(--grad);border:0;color:#fff;box-shadow:0 8px 18px rgba(109,75,224,.35)}
+.btn.primary:hover{filter:brightness(1.06)}
+.seg{border:0;box-shadow:var(--shadow);border-radius:999px;padding:4px}
+.seg button{border-radius:999px;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--grad);color:#fff}
+.search,.ans{border-radius:999px;border:1px solid var(--line);box-shadow:var(--shadow);padding-inline:20px}
+.opt{border-radius:18px;background:var(--surface);box-shadow:var(--shadow);border:1px solid transparent}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt.ok{background:var(--good-bg);border-color:var(--good)}
+.opt.no{background:var(--bad-bg);border-color:var(--bad)}
+.modebtn{border:0;box-shadow:var(--shadow);border-radius:20px;background:var(--surface)}
+.modebtn[aria-pressed="true"]{background:var(--soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.meter{height:8px;background:var(--soft)}
+.meter>i{background:linear-gradient(90deg,#A672F6,#F58A1F)}
+.tile.hero .meter{background:rgba(255,255,255,.28)}
+.tile.hero .meter>i{background:linear-gradient(90deg,#fff,#FFD3A0)}
+.ib{border:0;background:var(--soft);color:var(--accent);border-radius:50%}
+.ib[aria-pressed="true"]{background:var(--orange);color:#fff}
+.row.is-known .ru{opacity:.6}
+.flash{border:0;border-radius:28px;min-height:280px;box-shadow:var(--shadow)}
+.flash.back-side{background:var(--grad);color:#fff;box-shadow:0 12px 28px rgba(109,75,224,.38)}
+.flash.back-side .mnbig,.flash.back-side .nt,.flash.back-side .st{color:#fff}
+.ctrls .btn.no{color:var(--orange);border-color:var(--orange)}
+.ctrls .btn.yes{color:#fff;background:var(--good);border-color:var(--good)}
+.gcard summary::after{background:var(--grad);color:#fff}
+.tbl th{background:var(--soft);color:var(--accent)}
+.tip{background:var(--soft);border-left:4px solid var(--orange);border-radius:14px}
+.proverb{background:var(--soft);box-shadow:none}
+.orn{opacity:.5}
+.matr{filter:drop-shadow(0 6px 10px rgba(109,75,224,.3))}
+.score{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* зөөлөн суурь өнгөтэй картууд */
+:root{--t1:#D3C4FF;--t2:#FFD2A3;--t3:#B3E8CF;--track:rgba(255,255,255,.65)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--t1:#4A3A9A;--t2:#6B4426;--t3:#1F6050;--track:rgba(255,255,255,.2)}}
+:root[data-theme="dark"]{--t1:#4A3A9A;--t2:#6B4426;--t3:#1F6050;--track:rgba(255,255,255,.2)}
+.tile:not(.hero){box-shadow:none}
+.tile[href="#nouns"]{background:var(--t1)}
+.tile[href="#verbs"]{background:var(--t2)}
+.tile[href="#adjs"]{background:var(--t3)}
+.tile[href="#nouns"] .meter,.tile[href="#verbs"] .meter,.tile[href="#adjs"] .meter{background:var(--track)}
+
+/* дасгалын горимын картууд */
+:root{--t4:#B5DCFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--t4:#1F4A74}}
+:root[data-theme="dark"]{--t4:#1F4A74}
+.modes .modebtn{box-shadow:none}
+.modes .modebtn:nth-child(1){background:var(--t1)}
+.modes .modebtn:nth-child(2){background:var(--t2)}
+.modes .modebtn:nth-child(3){background:var(--t3)}
+.modes .modebtn:nth-child(4){background:var(--t4)}
+.modes .modebtn .md{color:var(--ink);opacity:.72}
+.modes .modebtn[aria-pressed="true"]{box-shadow:inset 0 0 0 3px var(--accent)}
+
+/* хөзрийн картын загвар */
+#deck{max-width:360px;margin-inline:auto}
+.flash{position:relative;aspect-ratio:5/7;min-height:0;width:100%;padding:44px 34px;border-radius:22px;border:2px solid var(--line);background:var(--surface);
+  box-shadow:0 14px 30px rgba(110,90,200,.22),inset 0 0 0 8px var(--surface),inset 0 0 0 9px var(--line)}
+.flash .big{font-size:clamp(1.5rem,7vw,2.2rem)}
+.flash .mnbig{font-size:clamp(1.2rem,5.5vw,1.7rem)}
+.flash.back-side{border-color:transparent;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.1) 0 10px,transparent 10px 20px),repeating-linear-gradient(-45deg,rgba(255,255,255,.1) 0 10px,transparent 10px 20px),var(--grad);
+  box-shadow:0 14px 30px rgba(109,75,224,.4),inset 0 0 0 8px transparent,inset 0 0 0 9px rgba(255,255,255,.65)}
+.corner{position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1;font-weight:800;color:var(--ink);pointer-events:none}
+.corner .rk{font-size:1.15rem;font-variant-numeric:tabular-nums}
+.corner .suit{font-size:1.35rem}
+.corner.red{color:var(--orange)}
+.corner.tl{top:20px;left:22px}
+.corner.br{bottom:20px;right:22px;transform:rotate(180deg)}
+.flash.back-side .corner,.flash.back-side .corner.red{color:#fff}
+.ctrls .btn,.nav .btn{padding-inline:12px}
+.nav .btn{min-height:40px;font-size:.9rem}
+
+.prow{display:flex;align-items:center;gap:12px;margin-top:8px}
+.prow .meter{flex:1;margin-top:0}
+.prow .pct{font-weight:800;font-size:1.15rem;font-variant-numeric:tabular-nums;min-width:3.4ch;text-align:right}
+
+/* туг */
+.modes .modebtn{position:relative;padding-right:132px}
+.flags{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:8px}
+.fl{display:inline-flex}
+.flag{width:34px;height:23px;border-radius:5px;box-shadow:0 0 0 1px rgba(0,0,0,.18),0 2px 4px rgba(0,0,0,.12);display:block}
+.farrow{font-weight:800;color:var(--ink);opacity:.7}
+@media (max-width:420px){.modes .modebtn{padding-right:16px;padding-top:44px}.flags{top:12px;right:auto;left:16px;transform:none}}
+
+.pen{display:inline-flex;margin-right:6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
+.modes .modebtn:has(.pen){padding-right:176px}
+@media (max-width:420px){.modes .modebtn:has(.pen){padding-right:16px}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
@@ -246,14 +349,12 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
       </svg>
     </div>
     <p class="lead">Сэдвээ сонгоод шинэ үгсээ цээжил, карт эргүүлж давт, сорилоор өөрийгөө шалга. Улаан өнгийн үсэг нь өргөлттэй эгшиг (Мечта́ → <span class="st">а</span>-д өргөлт).</p>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <div class="stack">
       <a class="tile hero" href="#topic">
         <span class="s">Сэдэв</span>
         <span class="t">КАКАЯ У ТЕБЯ МЕЧТА?</span>
-        <span class="s">Чиний мөрөөдөл юу вэ? · 64 нэр үг, 23 үйл үг, 29 тэмдэг нэр</span>
-        <span class="meter"><i id="m-home"></i></span>
-        <span class="s" id="t-home"></span>
+        <span class="s">Чиний мөрөөдөл юу вэ?</span>
+        <span class="prow"><span class="meter"><i id="m-home"></i></span><span class="pct" id="t-home">0%</span></span>
       </a>
     </div>
     <figure class="proverb"><blockquote lang="ru">Век жив<span class="st">и</span> — век уч<span class="st">и</span>сь.</blockquote><figcaption>Насаараа амьдар, насаараа суралц. · Орос зүйр цэцэн үг</figcaption></figure>
@@ -264,19 +365,21 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
     <p class="eyebrow">Сэдэв</p>
     <h2>КАКАЯ У ТЕБЯ МЕЧТА?</h2>
     <p class="lead">Чиний мөрөөдөл юу вэ? Үгээ цээжилж, дүрмээ судалж, дараа нь өөрийгөө сорь.</p>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <div class="stack">
       <a class="tile hero" href="#memorize">
         <span class="t">Үг цээжлэе!</span>
         <span class="s">Нэр үгс, үйл үгс, тэмдэг нэрс, флэшкарт</span>
+        <span class="prow"><span class="meter"><i id="m-mem"></i></span><span class="pct" id="t-mem">0%</span></span>
       </a>
       <a class="tile hero" href="#grammar">
         <span class="t">Энэ хичээлээр ямар дүрэм судлах вэ?</span>
         <span class="s">6 дүрэм · хүснэгт, жишээ, зөвлөмж</span>
+        <span class="prow"><span class="meter"><i id="m-gram"></i></span><span class="pct" id="t-gram">0%</span></span>
       </a>
       <a class="tile hero" href="#quiz">
         <span class="t">Өөрийгөө сорье!</span>
         <span class="s">20 санамсаргүй үг · 4 төрлийн дасгал</span>
+        <span class="prow"><span class="meter"><i id="m-quiz"></i></span><span class="pct" id="t-quiz">0%</span></span>
       </a>
     </div>
   </section>
@@ -285,7 +388,6 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
   <section id="v-memorize" hidden>
     <p class="eyebrow">КАКАЯ У ТЕБЯ МЕЧТА?</p>
     <h2>Үг цээжлэе!</h2>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <div class="sec">
       <h3>Энэ сэдэвт хамаарах үгс</h3>
       <div class="grid2">
@@ -314,7 +416,6 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
   <!-- нэр үг / үйл үг -->
   <section id="v-words" hidden>
     <h2 id="w-title"></h2>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <div class="bar">
       <div class="seg" role="group" aria-label="Горим">
         <button id="mode-list" aria-pressed="true">Жагсаалт</button>
@@ -341,7 +442,6 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
   <section id="v-grammar" hidden>
     <p class="eyebrow">КАКАЯ У ТЕБЯ МЕЧТА?</p>
     <h2>Энэ хичээлээр ямар дүрэм судлах вэ?</h2>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <p class="lead">Энэ хичээлд орсон үгс дээр суурилсан 6 дүрэм. Дүрэм бүрийг нээж хүснэгт, жишээг үз.</p>
     <div class="bar">
       <label class="switch" for="gtr"><input type="checkbox" id="gtr">Жишээний орчуулгыг нуух</label>
@@ -353,7 +453,6 @@ h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut
   <section id="v-quiz" hidden>
     <p class="eyebrow">КАКАЯ У ТЕБЯ МЕЧТА?</p>
     <h2>Өөрийгөө сорье!</h2>
-    <svg class="orn" aria-hidden="true" focusable="false"><rect width="100%" height="26" fill="url(#dome)"/></svg>
     <div id="quiz"></div>
   </section>
 </div>
@@ -519,14 +618,29 @@ const MKEY="ru-mechta-missed";
 let missed=new Set();
 try{missed=new Set(JSON.parse(localStorage.getItem(MKEY)||"[]").filter(id=>ALL.some(w=>w.id===id)));}catch(e){}
 function saveMissed(){try{localStorage.setItem(MKEY,JSON.stringify([...missed]));}catch(e){}}
+const GKEY="ru-mechta-grammar",QKEY="ru-mechta-quizok";
+let gdone=new Set(),qok=new Set();
+try{gdone=new Set(JSON.parse(localStorage.getItem(GKEY)||"[]"));}catch(e){}
+try{qok=new Set(JSON.parse(localStorage.getItem(QKEY)||"[]").filter(id=>ALL.some(w=>w.id===id)));}catch(e){}
+function saveG(){try{localStorage.setItem(GKEY,JSON.stringify([...gdone]));}catch(e){}}
+function saveQ(){try{localStorage.setItem(QKEY,JSON.stringify([...qok]));}catch(e){}}
+function setPct(k,frac){
+  const p=Math.round(100*frac);
+  const m=$("#m-"+k),t=$("#t-"+k);
+  if(m)m.style.width=p+"%";
+  if(t)t.textContent=p+"%";
+}
 function countKnown(words){return words.filter(w=>known.has(w.id)).length;}
 function refreshProgress(){
   $("#chip").textContent=countKnown(ALL)+" / "+ALL.length;
+  setPct("mem",countKnown(ALL)/ALL.length);
+  setPct("gram",gdone.size/GRAMMAR.length);
+  setPct("quiz",qok.size/ALL.length);
   const rows=[["home",ALL],["nouns",SETS.nouns.words],["verbs",SETS.verbs.words],["adjs",SETS.adjs.words]];
   for(const [k,ws] of rows){
     const c=countKnown(ws);
     $("#m-"+k).style.width=(100*c/ws.length)+"%";
-    $("#t-"+k).textContent=c+" / "+ws.length+" үг мэддэг";
+    $("#t-"+k).textContent=(k==="home")?Math.round(100*c/ws.length)+"%":c+" / "+ws.length+" үг мэддэг";
   }
 }
 
@@ -551,8 +665,8 @@ const VIEW_OF={home:"home",topic:"topic",memorize:"memorize",nouns:"words",verbs
 let current="home";
 const ws={set:"nouns",mode:"list",q:"",hide:false,deck:[],idx:0,flipped:false,onlyUnknown:false,order:null};
 
-function route(){
-  let h=location.hash.replace("#","");
+function route(arg){
+  let h=(typeof arg==="string")?arg:location.hash.replace("#","");
   if(!(h in VIEW_OF))h="home";
   current=h;
   for(const v of ["home","topic","memorize","words","grammar","quiz"])$("#v-"+v).hidden=(v!==VIEW_OF[h]);
@@ -563,8 +677,19 @@ function route(){
   refreshProgress();
   window.scrollTo(0,0);
 }
-$("#back").addEventListener("click",()=>{location.hash=PARENT[current]||"home";});
-window.addEventListener("hashchange",route);
+function go(h){
+  if(!(h in VIEW_OF))h="home";
+  try{if(location.hash!=="#"+h)location.hash=h;}catch(e){}
+  route(h);
+}
+$("#back").addEventListener("click",()=>go(PARENT[current]||"home"));
+window.addEventListener("hashchange",()=>{const h=location.hash.replace("#","")||"home";if(h!==current)route(h);});
+document.addEventListener("click",e=>{
+  const a=e.target.closest&&e.target.closest('a[href^="#"]');
+  if(!a)return;
+  e.preventDefault();
+  go(a.getAttribute("href").slice(1));
+});
 
 /* ---------- үгсийн хуудас ---------- */
 function openWords(){
@@ -634,6 +759,11 @@ function buildDeck(reset){
   ws.flipped=false;
   renderCard();
 }
+function corners(i){
+  const su=["♠","♥","♦","♣"][i%4],red=(su==="♥"||su==="♦");
+  const mkc=c=>{const d=el("span","corner "+c+(red?" red":""));d.setAttribute("aria-hidden","true");d.append(el("span","rk",String(i+1)),el("span","suit",su));return d;};
+  return [mkc("tl"),mkc("br")];
+}
 function renderCard(){
   const box=$("#deck");box.textContent="";
   if(!ws.deck.length){
@@ -646,6 +776,7 @@ function renderCard(){
   info.append(el("span","",(ws.idx+1)+" / "+ws.deck.length),el("span","",countKnown(SETS[ws.set].words)+" үг мэддэг"));
   const card=el("button","flash"+(ws.flipped?" back-side":""));card.type="button";
   card.setAttribute("aria-label","Картыг эргүүлэх");
+  card.append(...corners(ws.idx));
   if(!ws.flipped){
     const big=el("div","big");big.append(ruFrag(w.ru));card.append(big);
     if(w.ruNote){const n=el("div","nt");n.append("(",ruFrag(w.ruNote),")");card.append(n);}
@@ -688,22 +819,39 @@ const MODES={
 };
 const QUOTA={nouns:10,verbs:5,adjs:5}; /* нийт 20 */
 const qz={mode:"ru-mn-pick",tab:"new",review:false,qs:[],i:0,score:0,missed:[],answered:false};
-const norm=s=>plain(s).toLowerCase().replace(/ё/g,"е").replace(/[\s\-–.,!?'"«»()\/]+/g,"");
+const LOOK={a:"а",c:"с",e:"е",o:"о",p:"р",x:"х",y:"у",k:"к",m:"м",t:"т",h:"н"};
+const norm=s=>plain(s).normalize("NFKC").toLowerCase()
+  .replace(/[^\p{L}\p{N}]+/gu,"")
+  .replace(/[a-z]/g,c=>LOOK[c]||c)
+  .replace(/ё/g,"е").replace(/ө/g,"о").replace(/ү/g,"у");
 function checkTyped(input,w,toMn){
   const a=norm(input);
   if(!a)return false;
-  if(!toMn)return a===norm(w.ru);
+  if(!toMn)return [w.ru,...tokens(w.ruNote)].some(x=>norm(x)===a);
   const strip=s=>s.replace(/\([^)]*\)/g,"");
   return [w.mn,...tokens(w.mn)].flatMap(s=>[s,strip(s)]).some(s=>norm(s)===a);
 }
 function proverb(ru,mn){const f=el("figure","proverb");const b=el("blockquote");b.lang="ru";b.append(ruFrag(ru));f.append(b,el("figcaption","",mn+" · Орос зүйр цэцэн үг"));return f;}
+const FLAG={
+  ru:'<svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Оросын туг"><rect width="30" height="6.67" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#0039A6"/><rect y="13.33" width="30" height="6.67" fill="#D52B1E"/></svg>',
+  mn:'<svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Монголын туг"><rect width="30" height="20" fill="#DA2032"/><rect x="10" width="10" height="20" fill="#0066B3"/><g fill="#FFD900"><circle cx="5" cy="4.6" r="1.1"/><path d="M5 6l1.3 2.2H3.7z"/><path d="M5 8.4l1.3 2.2H3.7z" opacity=".0"/><rect x="2.5" y="9.2" width=".8" height="6.4"/><rect x="6.7" y="9.2" width=".8" height="6.4"/><rect x="3.6" y="9.6" width="2.8" height=".7"/><rect x="3.6" y="14.6" width="2.8" height=".7"/><circle cx="5" cy="12.4" r="1.1"/></g></svg>'
+};
+const PEN='<svg viewBox="0 0 36 36" width="34" height="34" role="img" aria-label="Балны үзэг"><path d="M3 32c3-3 5 1 8-1s4 0 6-1" fill="none" stroke="#7B52E8" stroke-width="1.8" stroke-linecap="round"/><g transform="rotate(45 18 18)"><rect x="14.5" y="2" width="7" height="22" rx="2.2" fill="#7B52E8"/><rect x="14.5" y="2" width="7" height="6" rx="2.2" fill="#F58A1F"/><rect x="21.8" y="5" width="1.4" height="10" rx=".7" fill="#F58A1F"/><rect x="16" y="11" width="1.4" height="9" rx=".7" fill="#fff" opacity=".45"/><path d="M14.5 24h7L18 32z" fill="#fff" stroke="#2B2A4C" stroke-width="1.2" stroke-linejoin="round"/><path d="M16.9 29.2h2.2L18 32z" fill="#2B2A4C"/></g></svg>';
+function flagPair(k){
+  const a=k.slice(0,2),b=k.slice(3,5);
+  const f=el("span","flags");f.setAttribute("aria-hidden","true");
+  const arrow=el("span","farrow","→");
+  const mkf=c=>{const w=el("span","fl");w.innerHTML=FLAG[c];return w;};
+  if(k.endsWith("type")){const pn=el("span","pen");pn.innerHTML=PEN;f.append(pn);}
+  f.append(mkf(a),arrow,mkf(b));return f;
+}
 function modePicker(parent){
   const sec=el("div","sec");sec.append(el("h3","","Дасгалын горим"));
   const g=el("div","modes");g.setAttribute("role","group");g.setAttribute("aria-label","Дасгалын горим");
   for(const k of Object.keys(MODES)){
     const m=MODES[k];
     const b=el("button","modebtn");b.type="button";b.setAttribute("aria-pressed",qz.mode===k);
-    b.append(el("span","mt",m.t),el("span","md",m.d));
+    b.append(el("span","mt",m.t),el("span","md",m.d),flagPair(k));
     b.addEventListener("click",()=>{qz.mode=k;[...g.children].forEach(c=>c.setAttribute("aria-pressed",c===b));});
     g.append(b);
   }
@@ -802,7 +950,7 @@ function quizRender(){
   nextBtn.addEventListener("click",()=>{qz.i++;quizRender();});
   const done=(right)=>{
     qz.answered=true;
-    if(right){qz.score++;if(qz.review)missed.delete(w.id);}
+    if(right){qz.score++;if(qz.review)missed.delete(w.id);qok.add(w.id);saveQ();}
     else{qz.missed.push(w);missed.add(w.id);}
     saveMissed();
     score.textContent="Оноо: "+qz.score;
@@ -846,7 +994,7 @@ function quizRender(){
     const inp=el("input","ans");inp.id="ans";inp.type="text";
     inp.autocomplete="off";inp.autocapitalize="off";inp.spellcheck=false;inp.lang=toMn?"mn":"ru";
     const row=el("div","bar");row.style.marginTop="0";
-    const ok=el("button","btn primary","Шалгах");ok.type="submit";
+    const ok=el("button","btn primary","Шалгах");ok.type="button";
     const skip=el("button","btn","Мэдэхгүй");skip.type="button";
     row.append(ok,skip);
     form.append(lab,inp,row);
@@ -860,7 +1008,10 @@ function quizRender(){
       fb.append(a);
       done(right);
     };
-    form.addEventListener("submit",e=>{e.preventDefault();if(qz.answered)return;reveal(checkTyped(inp.value,w,toMn));});
+    const doCheck=()=>{if(qz.answered)return;reveal(checkTyped(inp.value,w,toMn));};
+    form.addEventListener("submit",e=>{e.preventDefault();doCheck();});
+    ok.addEventListener("click",doCheck);
+    inp.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();doCheck();}});
     skip.addEventListener("click",()=>{if(!qz.answered)reveal(false);});
     card.append(form);
     setTimeout(()=>{try{inp.focus({preventScroll:true});}catch(e){}},0);
@@ -1026,8 +1177,9 @@ function gTip(t){const p=el("p","tip");p.append(ruFrag(t));return p;}
 function renderGrammar(){
   const box=$("#gram");box.textContent="";
   GRAMMAR.forEach((g,i)=>{
-    const d=el("details","gcard");if(i===0)d.open=true;
+    const d=el("details","gcard");
     const s=el("summary");
+    s.addEventListener("click",()=>setTimeout(()=>{if(d.open&&!gdone.has(i)){gdone.add(i);saveG();refreshProgress();}},0));
     const q=el("span","gq");q.append(ruFrag(g.q));
     s.append(q,el("span","gt",g.title));
     d.append(s);
